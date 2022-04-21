@@ -125,6 +125,44 @@
 
         /* icon example */
 
+        /* button example */
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            outline: 2px solid #fff;
+            padding: 30px 60px;
+            position: relative;
+            overflow: hidden;
+            transition: color 1s;
+        }
+
+        .button:hover {
+            color: #d8f0a0;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50px;
+            width: 150%;
+            height: 100%;
+            background-color: #fff;
+            transform: scaleX(0) skewX(35deg);
+            transform-origin: left;
+            z-index: -1;
+            transition: transform 1s;
+        }
+
+        .button:hover::before {
+            transform: scaleX(1) skewX(35deg);
+        }
+
+        /* button example */
+
         /* input example */
         input {
             accent-color: hotpink;
@@ -249,15 +287,27 @@
         }
 
         /* fixed background example */
+
+        /* card example */
+        .cards {
+            margin: 0 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card>img {
+            width: 100%;
+            height: 350px;
+        }
+
+        /* card example */
     </style>
 </head>
 
-<body style="margin: 0; padding: 0">
+<body style="margin: 0; padding: 0; background-color: #d8f0a0;">
     <h3>Text Column Example</h3>
-    <p style="
-        columns: 3; 
-        column-rule: solid 2px #222; 
-        text-align: justify;">
+    <p style=" columns: 3; column-rule: solid 2px #222; text-align: justify;">
         Lorem, ipsum dolor sit amet consectetur
         adipisicing elit.
         Laudantium voluptatum, nesciunt eos perspiciatis nemo vel deleniti iure asperiores incidunt eius impedit officia
@@ -315,6 +365,10 @@
         <a href="" class="icon"><i class="fa-brands fa-linkedin"></i></a>
         <a href="" class="icon"><i class="fa-brands fa-instagram"></i></a>
     </div>
+    <br><br>
+
+    <h3>Button</h3>
+    <a href="#" class="button">Learn more</a>
 
     <h3>Input Example</h3>
     <input type="checkbox">
@@ -379,6 +433,18 @@
         </div>
     </div>
 
+    <h3>Card Example</h3>
+    <div class="cards">
+        <div class="card">
+            <img src="https://picsum.photos/350/350?random=1" alt="1">
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/350/350?random=2" alt="2">
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/350/350?random=3" alt="3">
+        </div>
+    </div>
 </body>
 
 </html>
